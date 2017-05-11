@@ -1,0 +1,83 @@
+
+.get {
+	background-image: url(../images/bg.png);
+	background-repeat: no-repeat;
+	background-size:100%;
+	/*background: #1E5B94;*/
+	font-size: 150%;
+	color: #000;
+	text-align: center;
+	padding: 50px 0;
+	position: fixed;
+	width: 100%;
+	height: 400px;
+	z-index: 99;
+}
+.one,.two,.three {
+	position: relative;
+	width: 100%;
+}
+/*.get-title {
+	font-size: 200%;
+	border: 2px solid #fff;
+	padding: 20px;
+	display: inline-block;
+}*/
+
+.get-btn {
+	background: #fff;
+}
+
+.footer p {
+	color: #7f8c8d;
+	margin: 0;
+	padding: 15px 0;
+	text-align: center;
+	background: #2d3e50;
+}
+.main {
+	margin-top: 450px;
+}
+h1{
+	text-align: center;
+}
+/*---- Services Starts Here ----*/
+.services{
+	margin-top:2em;
+}
+.services-row{
+	margin-top:3em;
+	padding-bottom: 5em;
+}
+.services-column{
+	text-align:center;
+}
+.services-column h4{
+	font-size:1.8em;
+	color:#000;
+	font-weight:400;
+}
+.services-column p,.intro p{
+	font-size:15px;
+	font-weight:400;
+	line-height:1.8em;
+	width:80%;
+	margin:0 auto;
+	text-align:center;
+}
+.services-column i{
+	width:200px;
+	height:200px;
+	background:url(../images/img-resources.png)no-repeat;
+	display: inline-block;
+}
+.services-column i.icon1{
+	background-position:0px 0px;
+}
+.services-column i.icon2{
+	background-position:-200px 0px;
+}
+.services-column i.icon3{
+	background-position:-400px 0px;
+}
+/*---- Services Ends Here ----*/

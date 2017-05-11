@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>微博关系网|昌维的博客</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+		<link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+		<link rel="stylesheet" href="./css/style.css"/>
+	<!--[if lt IE 9]>
+	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+	<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+	<![endif]-->
+
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script src="assets/js/jquery.min.js"></script>
+	<!--<![endif]-->
+	<script src="assets/js/amazeui.min.js"></script>
+	<!-- 获取览器显示区域的高度 ： $(window).height();  -->
+	<!-- 获取浏览器显示区域的宽度 ：$(window).width(); -->
+	<!-- 获取页面的文档高度 ：$(document).height(); -->
+	<!-- 获取页面的文档宽度 ：$(document).width(); -->
+	<!-- 获取滚动条到顶部的垂直高度 ：$(document).scrollTop(); -->
+	<!-- 获取滚动条到左边的垂直宽度 ：$(document).scrollLeft(); -->
+</head>
+<body>
+	<div class="am-container">
+		<header class="am-topbar am-topbar-fixed-top">
+			<div class="am-container">
+				<h1 class="am-topbar-brand">
+					<a href="#">新浪微博关系网生成</a>
+				</h1>
+
+				<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+				data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span
+				class="am-icon-bars"></span></button>
+
+				<div class="am-collapse am-topbar-collapse" id="collapse-head">
+					<ul class="am-nav am-nav-pills am-topbar-nav">
+						<li class="am-active"><a href="index.html" target="_blank">首页</a></li>
+						<li><a href="http://www.changwei.me" target="_blank">昌维的博客</a></li>
+						<li><a href="http://jq.qq.com/?_wv=1027&k=27eMhuB" target="_blank">php编程交流群255258140</a></li>
+						<li><a href="http://jq.qq.com/?_wv=1027&k=2BLxJz8" target="_blank">网安&运维&开发交流255258140</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<hr>
+		<form method="get" action="index.php" class="am-form am-form-horizontal">
+		<div class="am-g">
+			<div class="am-u-sm-8 am-u-sm-offset-2">
+				<div class="am-input-group">
+			    	<span class="am-input-group-btn">
+			        	<button class="am-btn am-btn-default" type="button"><span class="am-icon-search"></span> </button>
+			      	</span>
+			      	<input type="text" class="am-form-field am-input-lg" placeholder="请输入新浪微博ID" name="weiboid">
+			      	<span class="am-input-group-btn">
+			      		<button type="submit" class="am-btn am-btn-primary">GO！</button>
+			      	</span>
+			    </div>
+			</div>
+		</div>
+		<hr>
+		<div class="am-g">
+			<div class="set am-u-lg-8">
+				<div class="am-panel am-panel-default">
+					<div class="am-panel-hd">抓取设置</div>
+					<div class="am-panel-bd">
+						<form class="am-form am-form-horizontal">
+							<div class="am-form-group">
+								<div class="am-form-group">
+									<label for="user-email" class="am-u-sm-3 am-form-label">爬行深度 / Deep</label>
+									<div class="am-u-sm-9">
+										<input type="text" class="am-form-field" placeholder="请输入爬行深度 / Deep" name="deep" value="3">
+										<small>爬行深度...</small>
+									</div>
+								</div>
+								<div class="am-form-group">
+									<label for="user-email" class="am-u-sm-3 am-form-label">每层抓取数量 / Count</label>
+									<div class="am-u-sm-9">
+										<input type="text" class="am-form-field" placeholder="请输入每层抓取数量，最大只能抓取200个 / Count" name="count" value="100">
+										<small>请输入每层抓取数量，最大只能抓取200个...</small>
+									</div>
+								</div>
+								<div class="am-form-group">
+									<label for="user-email" class="am-u-sm-3 am-form-label">缩放大小 / width</label>
+									<div class="am-u-sm-9">
+										<input type="text" class="am-form-field" placeholder="宽度 / width" name="width" value="2160">
+										<small>生成关系网图的宽度...</small>
+									</div>
+								</div>
+								<div class="am-form-group">
+									<label for="user-email" class="am-u-sm-3 am-form-label">缩放大小 / height</label>
+									<div class="am-u-sm-9">
+										<input type="text" class="am-form-field" placeholder="高度 / height" name="height" value="1920">
+										<small>生成关系网图的高度...</small>
+									</div>
+								</div>
+								<div class="am-form-group">
+									<label for="user-email" class="am-u-sm-3 am-form-label">缩放大小 / scaling</label>
+									<div class="am-u-sm-9">
+										<input type="text" class="am-form-field" placeholder="缩放大小 / scaling" name="scaling" value="3">
+										<small>生成关系网图的缩放大小...</small>
+									</div>
+								</div>
+								<div class="am-form-group">
+									<label for="user-email" class="am-u-sm-3 am-form-label">重力加速度 / gravity</label>
+									<div class="am-u-sm-9">
+										<input type="text" class="am-form-field" placeholder="重力加速度 / gravity" name="gravity" value="1.1">
+										<small>这个怎么说呢，就是数值越大，节点之间越靠近...</small>
+									</div>
+								</div>
+								<div class="am-form-group">
+									<label for="user-email" class="am-u-sm-3 am-form-label">最小圆角 / minRadius</label>
+									<div class="am-u-sm-9">
+										<input type="text" class="am-form-field" placeholder="最小圆角 / minRadius" name="minRadius" value="25">
+										<small>节点大小的最小值...</small>
+									</div>
+								</div>
+								<div class="am-form-group">
+									<label for="user-email" class="am-u-sm-3 am-form-label">最大圆角 / maxRadius</label>
+									<div class="am-u-sm-9">
+										<input type="text" class="am-form-field" placeholder="最大圆角 / maxRadius" name="maxRadius" value="50">
+										<small>节点大小的最大值...</small>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="login am-u-lg-4">
+				<div class="am-panel am-panel-default">
+					<div class="am-panel-hd">开放接口（敬请期待）</div>
+					<div class="am-panel-bd">
+						<!-- <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1454511752&di=8b5a7a2d29fef82e95149d74d766ca74&src=http://src.house.sina.com.cn/imp/imp/deal/97/c1/c/1c7dcf6776d41d0458b2560b902_p1_mk1.jpg" style="width: 100%;" align="center" alt=""> -->
+						<hr>
+						<a href="sdk"><img src="http://www.sinaimg.cn/blog/developer/wiki/48.png" align="center" alt=""></a>
+						<hr>
+						<div class="user-info">
+							<pre>
+								头像：avatar_hd
+								昵称：screen_name：
+								注册时间：created_at
+								粉丝数：followers_count
+								关注数：friends_count
+								用户的互粉数：bi_followers_count
+								statuses_count：微博数
+								description：描述
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+	<hr>
+
+	<footer>
+	<p align="center">© 2016 <a href="http://www.changwei.me" target="_blank">昌维的博客</a> | <a
+		href="http://www.changwei.me/weibo" target="_blank">微博关系网生成</a>. php编程交流群：<a href="http://jq.qq.com/?_wv=1027&k=27eMhuB target="_blank">374107842</a></p>
+	</footer>
+
+
+		</body>
+		</html>
